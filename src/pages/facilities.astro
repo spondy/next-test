@@ -1,0 +1,117 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'What we offer',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Tools **************** -->
+
+  <Content
+    isReversed
+    tagline="What we offer"
+    title="Explore our diverse facilities"
+    subtitle="Come and see what we have on hand. We've put together an environment where anyone can find the tools they need to help turn your concepts into realities."
+    id="tools"
+    items={[
+      {
+        title: 'Laser cutting',
+        description:
+          'We have multiple industrial laser cutters and an easy to access training program that can get anyone cutting in a flash.',
+        icon: 'tabler:grid-dots',
+      },
+      {
+        title: '3D printers',
+        description:
+          'Our DLP and FDM printers will print all the knick-knacks you could possibly want. Want to print things for tabletop games? They can do that too!',
+        icon: 'tabler:grid-dots',
+      },
+      {
+        title: 'Wood Working',
+        description:
+          'Tackle some bigger projects with a table saw, router table, CNC mill, band saw, or lathe. Plus all your hand power tools like drills, drivers, circular saws, trim router, and multitool.',
+        icon: 'tabler:grid-dots',
+      },
+      {
+        title: 'Metal Working',
+        description:
+          'MIG/TIG/SMAW welding supplies, bridgeport mill, metal bandsaw, plasma cutter, forge, and foundry.',
+        icon: 'tabler:grid-dots',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/gallery/20181005_203737.jpg',
+      alt: 'Tools Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Specialised tools and machines</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Spaces **************** -->
+
+  <Content
+    id="spaces"
+    isAfterContent
+    items={[
+      {
+        title: 'Project area',
+        description:
+          'A dedicated coworking space for members to bring their creations to life. It features workspace with access to needed tools and equipment, fostering an environment of unbridled innovation and creativity.',
+        icon: 'tabler:grid-dots',
+      },
+      {
+        title: 'Social area',
+        description:
+          "The social area at The Artifactory is a warm and welcoming space where members can hang out, chill, and enjoy light conversations. It's a great environment for relaxation and making connections with other members.",
+        icon: 'tabler:grid-dots',
+      },
+      {
+        title: 'Electronics Lab',
+        description:
+          'A quiet space filled with soldering and reflow equipment, multimeters, oscilloscopes, hand tools, power supplies, basic components, and more.',
+        icon: 'tabler:grid-dots',
+      },
+      {
+        title: 'Rehearsal room',
+        description:
+          'Treated room with PA and limited backline, great for rehearsals, practice, or recording music and podcasts. Suits up to a four/five piece. Rock out to your hearts content, day or night.',
+        icon: 'tabler:grid-dots',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/gallery/20190616_162012.jpg',
+      alt: 'Spaces Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Dedicated spaces</h3>
+    </Fragment>
+  </Content>
+
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Join our community today!"
+    callToAction={{
+      text: 'Become a member',
+      href: '/pricing',
+      icon: 'tabler:users',
+    }}
+    callToAction2={{
+      text: 'Plan your first visit',
+      href: '/first_visit',
+    }}
+  />
+
+
+</Layout>

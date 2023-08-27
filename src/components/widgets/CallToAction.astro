@@ -1,0 +1,85 @@
+---
+import { Icon } from 'astro-icon/components';
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import type { CallToAction, Widget } from '~/types';
+import Headline from '../ui/Headline.astro';
+
+interface Props extends Widget {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  callToAction?: CallToAction;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  callToAction = await Astro.slots.render('callToAction'),
+  callToAction2 = await Astro.slots.render('callToAction2'),
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as Props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <div
+    class="max-w-3xl mx-auto text-center p-12 rounded-md shadow-xl dark:shadow-none dark:bg-stone-900 dark:border dark:border-neutral-700"
+  >
+    <Headline
+      title={title}
+      subtitle={subtitle}
+      tagline={tagline}
+      classes={{
+        container: 'mb-0 md:mb-0',
+        title: 'text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading',
+        subtitle: 'text-xl text-muted dark:text-slate-400',
+      }}
+    />
+    <div class="max-w-3xl mx-auto">
+      {subtitle && <p class="text-xl text-muted mb-6 dark:text-stone-300" set:html={subtitle} />}
+      <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
+        {
+          callToAction && (
+            <div class="flex w-full sm:w-auto">
+              {typeof callToAction === 'string' ? (
+                <Fragment set:html={callToAction} />
+              ) : (
+                <a class="btn btn-primary sm:mb-0 w-full" href={callToAction?.href} rel="noopener">
+                  {callToAction?.icon && (
+                    <>
+                      <Icon name={callToAction.icon} class="w-5 h-5 mr-1 -ml-1.5 rtl:-mr-1.5 rtl:ml-1" />
+                    </>
+                  )}
+                  {callToAction?.text}
+                </a>
+              )}
+            </div>
+          )
+        }
+        {
+          callToAction2 && (
+            <div class="flex w-full sm:w-auto">
+              {typeof callToAction2 === 'string' ? (
+                <Fragment set:html={callToAction2} />
+              ) : (
+                <a class="btn w-full" href={callToAction2?.href}>
+                  {callToAction2?.icon && (
+                    <>
+                      <Icon name={callToAction2.icon} class="w-5 h-5 mr-1 -ml-1.5" />
+                      &nbsp;
+                    </>
+                  )}
+                  {callToAction2.text}
+                </a>
+              )}
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>

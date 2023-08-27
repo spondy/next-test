@@ -1,0 +1,219 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Membership',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+{/* 
+  <HeroText
+    tagline="Membership"
+    title="Choose the perfect option for your goals."
+    subtitle="Only pay for what you need"
+  />
+*/}
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+  id=prices
+  tagline="Membership"
+  title="Choose the perfect option for your goals"
+  subtitle="Only pay for what you need"
+    prices={[
+      {
+        title: 'day pass',
+        subtitle: 'Pay day to day with no commitment',
+        price: 15,
+        period: 'per day',
+        items: [
+          {
+            description: 'Full use of Artifactory facilities',
+          },
+          {
+            description: 'Pay by EFTPOS on the day',
+          },
+          {
+            description: 'No commitment',
+          },
+        ],
+        callToAction: {
+          targetBlank: false,
+          text: 'Plan your first visit',
+          href: '/first_visit',
+        },
+      },
+      {
+        title: 'concession',
+        subtitle: 'For students and concession holders',
+        price: 45,
+        period: 'per month',
+        items: [
+          {
+            description: 'All the privileges of our standard membership',
+          },
+          {
+            description: 'For students and concession card holders',
+          },
+        ],
+        callToAction: {
+          targetBlank: true,
+          text: 'Get started',
+          href: 'https://artifactory.tidyhq.com/public/membership_levels/53401b970f',
+        },
+      },
+      {
+        title: 'standard',
+        subtitle: 'Optimal choice for most users',
+        price: 75,
+        period: 'Per Month',
+        items: [
+          {
+            description: '24/7 Access (with bond)',
+          },
+          {
+            description: 'Personal storage locker',
+          },
+          {
+            description: 'Discounted tool usage fees',
+          },
+          {
+            description: 'Free access to events',
+          },
+        ],
+        callToAction: {
+          targetBlank: true,
+          text: 'Get started',
+          href: 'https://artifactory.tidyhq.com/public/membership_levels/57b90dbb32',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'popular',
+      },
+      {
+        title: 'band',
+        subtitle: 'For bands and performing artists',
+        price: 100,
+        period: 'Per Month',
+        items: [
+          {
+            description: '24/7 Access (with bond)',
+          },
+          {
+            description: 'Rehearsal room access',
+          },
+          {
+            description: 'Weekly rehearsal slots',
+          },
+          {
+            description: 'PA and limited backline',
+          },
+        ],
+        callToAction: {
+          targetBlank: true,
+          text: 'Get started',
+          href: 'https://artifactory.tidyhq.com/public/membership_levels/NYW9Rg',
+        },
+      },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    tagline="Why sign up?"
+    title="Discover the advantages of becoming an Artifactory member"
+    columns={2}
+    items={[
+      {
+        title: '24/7 Access (with a key bond)',
+        description: 'As a member you can apply for 24/7 access so you can use the Artifactory at your own pace.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Personal storage locker',
+        description: 'Monthly members are entitled to an onsite storage locker to keep their materials and belongings in so there is no need to transport your project home every day.',
+        icon: 'tabler:shield-lock',
+      },
+      {
+        title: 'Regular events',
+        description: 'With multiple regular weekly events, the Artifactory is not just a makerspace, but also a social hub and community.',
+        icon: 'tabler:calendar',
+      },
+      {
+        title: 'Free events',
+        description: 'Free access to Artifactory events that normally have a door charge.',
+        icon: 'tabler:walk',
+      },
+      {
+        title: 'Discounted tool usage',
+        description: 'Heavily reduced rates for tools that carry material and usage fees, such as our laser cutters and 3D printers.',
+        icon: 'tabler:chevrons-down',
+      },
+      {
+        title: 'Join our online community',
+        description: 'Share knowledge and skills or have a friendly chat on Slack, our online community platform.',
+        icon: 'tabler:messages',
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Pricing FAQs"
+    subtitle="Choosing the right plan is important, and we're here to answer your questions. If you have queries about our pricing options, you're in the right place."
+    columns={1}
+    items={[
+      {
+        title: 'What payment methods do you accept?',
+        description:
+          'We accept credit card payments through TidyHQ, our payment platform. Alternatively we also accept payments via by bank transfer.',
+      },
+      {
+        title: 'Can anyone become a member?',
+        description:
+          'Yes! Everyone is welcome at the Artifactory and we accept all applications.',
+      },
+      {
+        title: 'What if I need to cancel my membership?',
+        description:
+          'While we will be sad to see you go, all you need to do is send us an email and we will cancel your membership immediately.',
+      },
+      {
+        title: 'Can I switch between membership types?',
+        description:
+          'Yes you can, just let us know by email and we will be able to move you to your desired membership.',
+      },
+      {
+        title: 'Are there any hidden fees beyond the displayed cost?',
+        description:
+          'No, the membership cost is all inclusive. A small number of our larger tools carry a nominal material and usage fee, such as our laser cutters and 3D printers, to cover the cost of replacing consumables.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Ready to join our community?"
+    callToAction={{
+      text: 'Become a member',
+      href: '#prices',
+      icon: 'tabler:users',
+    }}
+    callToAction2={{
+      text: 'Plan your first visit',
+      href: '/first_visit',
+    }}
+  />
+
+</Layout>

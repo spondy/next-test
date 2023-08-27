@@ -1,0 +1,86 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import FAQs from '~/components/widgets/FAQs.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Slack',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    tagline="FAQs"
+    columns={1}
+    items={[
+      {
+        title: 'When is the Artifactory open?',
+        description:
+          "The Artifactory runs regular events where anyone is welcome to attend and use the space which you can find <a href=\"/events\" class=\"underline text-neutral-800 dark:text-neutral-400 hover:text-primary dark:hover:text-primary\">here</a>.  In addition, monthly members are able to apply for 24/7 access so you can use the Artifactory at your own pace. If it's your first time at the Artifactory the best time for you will be one of our Open Days on the first Saturday of each month.",
+      },
+      {
+        title: 'How much does it cost to be a member?',
+        description:
+          "We offer a range of memberships including one-off day passes and concession rates. Check out our <a href=\"/pricing\" class=\"underline text-neutral-800 dark:text-neutral-400 hover:text-primary dark:hover:text-primary\">pricing page</a> for detailed info.",
+      },
+      {
+        title: 'Do you offer concession prices?',
+        description:
+          'Yes we do! We offer concession prices for students, concession card, and companion card holders.',
+      },
+      {
+        title: "Do you have a specific tool I'm looking for?",
+        description:
+          "If you're looking for something specific feel free to reach out to us via email or our <a href=\"/#slack\" class=\"underline text-neutral-800 dark:text-neutral-400 hover:text-primary dark:hover:text-primary\">online community platform Slack</a>. Our volunteers are ready to chat about what options we have available for you. For a detailed list of our facilities you can also look at our <a href=\"https://wiki.artifactory.org.au/\" class=\"underline text-neutral-800 dark:text-neutral-400 hover:text-primary dark:hover:text-primary\">wiki</a>. Better yet, come to one of our <a href=\"/events\" class=\"underline text-neutral-800 dark:text-neutral-400 hover:text-primary dark:hover:text-primary\">monthly Open Days</a> to see for yourself!",
+      },
+    ]}
+  />
+
+  <!-- Contact Us Widget ************** -->
+
+  <Features2
+    id="contact"
+    title="Contact Us"
+    subtitle="If you can't find the answers you're looking for here, feel free to reach out to us."
+    tagline="Have another question?"
+    columns={2}
+    items={[
+      {
+        title: 'Chat with us',
+        description:
+          'Join us on the <a href="/#slack" class=\"underline text-neutral-800 dark:text-neutral-400 hover:text-primary dark:hover:text-primary\">Artifactory Slack</a>, our online community platform for members and non-members alike. Simply ask your question in the #general channel or join one of our specific interest groups.',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Email us',
+        description:
+          'Feel free to email us at <a href="mailto:info@artifactory.org.au" class=\"underline text-neutral-800 dark:text-neutral-400 hover:text-primary dark:hover:text-primary\">info@artifactory.org.au</a> with any enquiries.',
+        icon: 'tabler:mail',
+      },
+    ]}
+  />
+
+  {/*
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Join our community today!"
+    callToAction={{
+      text: 'Become a member',
+      href: '/pricing',
+      icon: 'tabler:users',
+    }}
+    callToAction2={{
+      text: 'Plan your first visit',
+      href: '/first_visit',
+    }}
+  />
+   */}
+
+</Layout>

@@ -1,0 +1,208 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+
+const metadata = {
+  title: 'Perth Artifactory',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero  ******************* -->
+
+  <Hero
+    callToAction={{ text: 'Become a member', href: '/pricing', icon: 'tabler:users' }}
+    callToAction2={{ text: 'Learn more', href: '#features' }}
+    image={{ src: '~/assets/images/hero.png', alt: 'Perth Artifactory' }}
+  >
+    <Fragment slot="title">
+      Make something incredible
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">The Perth Artifactory</span> is a community workshop and makerspace in Osborne Park, Western Australia.</span>
+    </Fragment>
+  </Hero>
+
+
+  <!-- What we offer  *************** -->
+
+  <Features
+    id="features"
+    tagline="What we offer"
+    title="What will you find at the Artifactory?"
+    subtitle="We are dedicated to fostering creativity, accessibility, and wellbeing for people of all backgrounds and skill levels. We aim to equip our community with new skills, nurture their passions, and promote happiness through inbridled invention."
+    items={[
+      {
+        title: 'Dedicated project area',
+        description:
+          'The heart of the Artifactory where you can work on your latest ideas and get inspired by what others are working on.',
+        icon: 'tabler:hammer',
+      },
+      {
+        title: 'Specialised tools',
+        description:
+          'We have a wide range of hard to find tools including laser cutters, 3D printers, CNC machines, lathes, mills, and more.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Social area',
+        description:
+          'The home of our regular social events where you can take a break from making and chat with other members. You can watch TV, listen to music, or play one of our dozens of board games.',
+        icon: 'tabler:device-gamepad-2',
+      },
+      {
+        title: 'Quiet labs',
+        description:
+          'If you want a calmer environment to focus, our computer and electronics labs are the perfect place.',
+        icon: 'tabler:device-desktop',
+      },
+      {
+        title: 'Outdoor spaces',
+        description:
+          'For the messier projects, or simply to sit with friends and get a bit of sunshine.',
+        icon: 'tabler:sun-high',
+      },
+      {
+        title: 'Rehearsal Room',
+        description:
+          'Treated room with PA and limited backline, great for rehearsals, recording, and podcasts. Suits up to a four/five piece band.',
+        icon: 'tabler:music',
+      },
+    ]}
+  />
+
+  {/*
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    id="testimonials"
+    tagline="testimonials"
+    title="Words from our community"
+    testimonials={[
+      {
+        testimonial: `Several of our clients engage with the Artifactory and have found not only a creative outlet that encourages their abilities to shine,
+                      but a culture that has helped them find compassion, genuine interest, camaraderie and become valued members of a community.
+                      ...the Artifactory not only offers a maker space but an inclusive place for all to make friends and find a valued role in a community.`,
+        name: 'Paul Fleay',
+        job: 'CEO, Inclusion WA',
+        image: {
+          src: '~/assets/images/people/paul-fleay.png',
+          alt: 'Paul Fleay Image',
+        },
+      },
+      {
+        testimonial: `My husband Jean-Max was diagnosed with dementia in 2021.
+                      As time has progressed, we had become more isolated...
+                      This year, he started going to the Perth Artifactory, and has made a beautiful chair for one of his grand daughters, which will become a family heirloom.
+                      Jean is often able to share lunch with other members of the Artifactory, who always take time to sit down with him and talk.
+                      Seeing Jean using a power tool for the first time in years, with the support of an Artifactory volunteer was just wonderful.`,
+        name: 'Anna Prosper',
+        job: "Jean-Max's Wife",
+        image: {
+          src: '~/assets/images/people/noimg-01.png',
+          alt: 'Anna Prosper Image',
+        },
+      },
+      {
+        testimonial:
+          'I was able to download and use a professional website template within minutes. The step-by-step process and user-friendly interface made it easy for me to create a website that looks as if it was designed by a pro.',
+        name: 'Sidney Hansen',
+        job: 'Decorator',
+        image: {
+          src: '~/assets/images/people/noimg-03.png',
+          alt: 'Image',
+        },
+      },
+    ]}
+  />
+ */}
+
+  <!-- Slack **************** -->
+
+  <Content
+    isReversed
+    id="slack"
+    tagline="Connect with us"
+    title="Join our online community"
+    subtitle="Slack is our online community platform where members and non-members alike chat and socialise."
+    callToAction2={{
+      text: 'Join our Slack',
+      href: 'https://perart.io/slack',
+      icon: 'tabler:brand-slack',}}
+    items={[
+      {
+        title: 'PC and mobile',
+        description:
+          "Available on all major platforms, including PC, Android, and iOS.",
+        icon: 'tabler:devices',
+      },
+      {
+        title: 'Have a question?',
+        description:
+          "Ask away! By joining our Slack you gain access to everyone in our communty. Even past members that have since moved interstate and overseas are still active in our community.",
+        icon: 'tabler:zoom-question',
+      },
+      {
+        title: 'Find out what people are working on',
+        description:
+          "Hop into one of our topic specific channels to see what other people are doing in your favourite hobby. Can't find an appropriate channel? You can make your own!",
+        icon: 'tabler:cloud-star',
+      },
+      {
+        title: 'Communicate with others',
+        description:
+          "If you need to get in contact with another member of the community you can simply send them a direct message and not have to worry about bumping into them at the Artifactory.",
+        icon: 'tabler:messages',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/slack.png',
+      alt: 'Perth Artifactory Slack',
+    }}
+  >
+  </Content>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    id="stats"
+    title="Statistics about us"
+    stats={[
+      { title: 'Active Members', amount: '50+' },
+      { title: 'Sponsored Members', amount: '5' },
+      { title: 'Monthly Events', amount: '15+' },
+      { title: 'Monthly Attendees', amount: '300+' },
+    ]}
+  />
+
+  <!-- Map ******************* -->
+
+  <div style="overflow: hidden" class="mx-auto max-w-5xl w-11/12 rounded-lg bg-neutral-500 shadow-lg">
+    <iframe src="https://snazzymaps.com/embed/517349" width="100%" height="600px" style="border:none;"></iframe>
+  </div>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Join our community today!"
+    callToAction={{
+      text: 'Become a member',
+      href: '/pricing',
+      icon: 'tabler:users',
+    }}
+    callToAction2={{
+      text: 'Plan your first visit',
+      href: '/first_visit',
+    }}
+  />
+
+</Layout>

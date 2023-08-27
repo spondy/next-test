@@ -1,0 +1,59 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Slack',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Slack **************** -->
+
+  <Content
+    isReversed
+    id="slack"
+    tagline="Connect with us"
+    title="Join our online community"
+    subtitle="Slack is our online community platform where members and non-members alike chat and socialise."
+    callToAction2={{
+      text: 'Join our Slack',
+      href: 'https://perart.io/slack',
+      icon: 'tabler:brand-slack',}}
+    items={[
+      {
+        title: 'PC and mobile',
+        description:
+          "Available on all major platforms, including PC, Android, and iOS.",
+        icon: 'tabler:devices',
+      },
+      {
+        title: 'Have a question?',
+        description:
+          "Ask away! By joining our Slack you gain access to everyone in our communty. Even past members that have since moved interstate and overseas are still active in our community.",
+        icon: 'tabler:zoom-question',
+      },
+      {
+        title: 'Find out what people are working on',
+        description:
+          "Hop into one of our topic specific channels to see what other people are doing in your favourite hobby. Can't find an appropriate channel? You can make your own!",
+        icon: 'tabler:cloud-star',
+      },
+      {
+        title: 'Communicate with others',
+        description:
+          "If you need to get in contact with another member of the community you can simply send them a direct message and not have to worry about bumping into them at the Artifactory.",
+        icon: 'tabler:messages',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/slack.png',
+      alt: 'Perth Artifactory Slack',
+    }}
+  >
+  </Content>
+
+</Layout>

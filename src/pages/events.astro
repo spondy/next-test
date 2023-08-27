@@ -1,0 +1,77 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Events',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText
+    tagline="What's going on"
+    title="Events at the Artifactory"
+    subtitle="Come and see what we have on hand. We've put together an environment where anyone can find the tools they need to help turn your concepts into realities."
+  />
+
+  <!-- Calendar ************** -->
+
+    <div style="overflow: hidden" class="mx-auto max-w-6xl w-11/12 rounded-lg bg-neutral-500 shadow-lg">
+      <iframe   src="https://space.artifactory.org.au/calendar/calendar.html"
+                width="100%"
+                height="800px"
+                frameBorder="0">
+      </iframe>
+    </div>
+
+
+  <!-- Location ************** -->
+
+  <Features2
+    id="location"
+    title="Our location"
+    tagline="find us"
+    columns={3}
+    items={[
+      {
+        title: 'Address',
+        description: 'Unit 8 / 16 Guthrie Street<br> Osborne Park WA 6017',
+      },
+      {
+        title: 'Nearest Bus Stop',
+        description: '<a href="https://www.transperth.wa.gov.au/Timetables/Details/Bus/413">Route 413</a> stops outside the Artifactory.<br> <a href="https://www.transperth.wa.gov.au/Timetables/Details/Bus/990">Route 990</a> stops two blocks away.',
+      },
+      {
+        title: 'Nearest Train',
+        description: 'Stirling Station and Glendalough Station.',
+      },
+    ]}
+  />
+
+    <div style="overflow: hidden" class="mx-auto max-w-5xl w-11/12 rounded-lg bg-neutral-500 shadow-lg">
+      <iframe src="https://snazzymaps.com/embed/517349" width="100%" height="600px" style="border:none;"></iframe>
+    </div>
+
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Join our community today!"
+    callToAction={{
+      text: 'Become a member',
+      href: '/pricing',
+      icon: 'tabler:users',
+    }}
+    callToAction2={{
+      text: 'Plan your first visit',
+      href: '/first_visit',
+    }}
+  />
+
+
+</Layout>

@@ -1,0 +1,106 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Features2 from '~/components/widgets/Features2.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+
+const metadata = {
+  title: 'About us',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <!-- Vision ****************** -->
+
+  <Steps2
+    id="vision"
+    tagline="About us"
+    title="Our Values"
+    subtitle="At the Artifactory our vision is to cultivate a welcoming, safe, and nurturing creative space. We champion accessibility and inclusion by providing access to a welcoming space equipped with unique tools and training for one and all, regardless of background or experience. Our goal is to empower individuals to realise their creative potential and in doing so, enhance the mental health and happiness of our community through the joy of collaborative making."
+    items={[
+      {
+        title: 'Improving the wellbeing of our community',
+        description:
+          'Promote awareness of mental, emotional, and physical health of the people in our community.',
+        icon: 'tabler:user-heart',
+      },
+      {
+        title: 'Welcoming all people',
+        description:
+          'Everyone is welcome at the Artifactory. We do not discriminate against any person on the basis of gender, orientation, race, age, ability, or faith.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Sharing of knowledge and skills',
+        description:
+          'Bringing out the creative potential in our community through sharing of knowledge and skills.',
+        icon: 'tabler:school',
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    id="stats"
+    title="Statistics about us"
+    stats={[
+      { title: 'Active Members', amount: '50+' },
+      { title: 'Sponsored Members', amount: '5' },
+      { title: 'Monthly Events', amount: '15+' },
+      { title: 'Monthly Attendees', amount: '300+' },
+    ]}
+  />
+
+  <!-- Location ************** -->
+
+  <Features2
+    id="location"
+    title="Our location"
+    tagline="find us"
+    columns={3}
+    items={[
+      {
+        title: 'Address',
+        description: 'Unit 8 / 16 Guthrie Street<br> Osborne Park WA 6017',
+      },
+      {
+        title: 'Nearest Bus Stop',
+        description: '<a href="https://www.transperth.wa.gov.au/Timetables/Details/Bus/413">Route 413</a> stops outside the Artifactory.<br> <a href="https://www.transperth.wa.gov.au/Timetables/Details/Bus/990">Route 990</a> stops two blocks away.',
+      },
+      {
+        title: 'Nearest Train',
+        description: 'Stirling Station and Glendalough Station.',
+      },
+    ]}
+  />
+
+    <div style="overflow: hidden" class="mx-auto max-w-5xl w-11/12 rounded-lg bg-neutral-500 shadow-lg">
+      <iframe src="https://snazzymaps.com/embed/517349" width="100%" height="600px" style="border:none;"></iframe>
+    </div>
+
+  <!-- Contact Us Widget ************** -->
+
+  <Features2
+    id="contact"
+    title="Contact Us"
+    tagline="Have a question?"
+    columns={2}
+    items={[
+      {
+        title: 'Chat with us',
+        description:
+          'Join us on the <a href="/#slack" class=\"underline text-neutral-800 dark:text-neutral-400 hover:text-primary dark:hover:text-primary\">Artifactory Slack</a>, our online community platform for members and non-members alike. Simply ask your question in the #general channel or join one of our specific interest groups.',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Email us',
+        description:
+          'Feel free to email us at <a href="mailto:info@artifactory.org.au" class=\"underline text-neutral-800 dark:text-neutral-400 hover:text-primary dark:hover:text-primary\">info@artifactory.org.au</a> with any enquiries.',
+        icon: 'tabler:mail',
+      },
+    ]}
+  />
+</Layout>

@@ -1,0 +1,35 @@
+---
+import { SITE_CONFIG } from '~/utils/config';
+import Image from '~/components/common/Image.astro';
+
+const {
+  image = await Astro.slots.render('image'),
+} = Astro.props;
+---
+
+
+<span class="self-center ml-0 mr-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-neutral-900 whitespace-nowrap dark:text-white">
+
+      <div>
+        {
+          image && (
+            <div class="relative max-w-5xl whitespace-nowrap">
+              {typeof image === 'string' ? (
+                <Fragment set:html={image} />
+              ) : (
+                <Image
+                  class="w-full bg-transparent"
+                  widths={[400, 768, 1024, 2040]}
+                  sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+                  loading="eager"
+                  width={50}
+                  height={50}
+                  {...image}
+                />
+              )}
+            </div>
+          )
+        }
+      </div>
+
+</span>
